@@ -1,0 +1,1 @@
+compiler.c.flags=-c -g -O3 -w -ffunction-sections -fdata-sections -MMD

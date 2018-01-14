@@ -111,7 +111,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 500000
 
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
@@ -322,7 +322,7 @@
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 275
+#define HEATER_0_MAXTEMP 300
 #define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
@@ -386,9 +386,9 @@
 // If your configuration is significantly different than this and you don't understand the issues involved, you probably
 // shouldn't use bed PID until someone else verifies your hardware works.
 // If this is enabled, find your own PID constants below.
-//#define PIDTEMPBED
+#define PIDTEMPBED
 
-#define BED_LIMIT_SWITCHING
+//#define BED_LIMIT_SWITCHING
 
 // This sets the max power delivered to the bed, and replaces the HEATER_BED_DUTY_CYCLE_DIVIDER option.
 // all forms of bed control obey this (PID, bang-bang, bang-bang with hysteresis)
@@ -531,7 +531,8 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 95 }
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 95 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 93.7745 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -642,7 +643,7 @@
 #define BLTOUCH
 //#define SERVO0_PIN 27
 #if ENABLED(BLTOUCH)
-  #define BLTOUCH_DELAY 100   // (ms) Enable and increase if needed
+  //#define BLTOUCH_DELAY 100   // (ms) Enable and increase if needed
 #endif
 
 /**
@@ -749,7 +750,7 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR false
+#define INVERT_X_DIR true
 #define INVERT_Y_DIR false
 #define INVERT_Z_DIR true
 
