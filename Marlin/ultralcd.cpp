@@ -718,17 +718,18 @@ void kill_screen(const char* lcd_msg) {
   }
 
   void lcd_quick_feedback() {
-    lcdDrawUpdate = LCDVIEW_CLEAR_CALL_REDRAW;
-    buttons = 0;
-    next_button_update_ms = millis() + 500;
-
-    // Buzz and wait. The delay is needed for buttons to settle!
-    lcd_buzz(LCD_FEEDBACK_FREQUENCY_DURATION_MS, LCD_FEEDBACK_FREQUENCY_HZ);
-    #if ENABLED(LCD_USE_I2C_BUZZER)
-      delay(10);
-    #elif PIN_EXISTS(BEEPER)
-      for (int8_t i = 5; i--;) { buzzer.tick(); delay(2); }
-    #endif
+// HACK: slowed down http://lokspace.eu/how-to-make-the-marlin-menus-more-responsive-on-anet-a8/
+//    lcdDrawUpdate = LCDVIEW_CLEAR_CALL_REDRAW;
+//    buttons = 0;
+//    next_button_update_ms = millis() + 500;
+//
+//    // Buzz and wait. The delay is needed for buttons to settle!
+//    lcd_buzz(LCD_FEEDBACK_FREQUENCY_DURATION_MS, LCD_FEEDBACK_FREQUENCY_HZ);
+//    #if ENABLED(LCD_USE_I2C_BUZZER)
+//      delay(10);
+//    #elif PIN_EXISTS(BEEPER)
+//      for (int8_t i = 5; i--;) { buzzer.tick(); delay(2); }
+//    #endif
   }
 
   void lcd_completion_feedback(const bool good/*=true*/) {
