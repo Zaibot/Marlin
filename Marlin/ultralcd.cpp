@@ -792,9 +792,7 @@ void lcd_buzz(const long duration, const uint16_t freq) {
   #endif
 }
 
-void lcd_quick_feedback(const bool clear_buttons) {
-
-  void lcd_quick_feedback() {
+  void lcd_quick_feedback(const bool clear_buttons) {
 // HACK: slowed down http://lokspace.eu/how-to-make-the-marlin-menus-more-responsive-on-anet-a8/
 //    lcdDrawUpdate = LCDVIEW_CLEAR_CALL_REDRAW;
 //    buttons = 0;
