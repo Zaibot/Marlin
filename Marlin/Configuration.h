@@ -762,7 +762,7 @@
 #define XY_PROBE_SPEED 120*60
 
 // Speed for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_SPEED_FAST 6*60
+#define Z_PROBE_SPEED_FAST 10*60
 
 // Speed for the "accurate" probe of each point
 #define Z_PROBE_SPEED_SLOW 1*60
